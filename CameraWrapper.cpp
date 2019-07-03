@@ -9,12 +9,16 @@ class CameraWrapper
     VideoCapture cap;
 
   public:
-    CameraWrapper(int camera, int width, int height)
+    CameraWrapper(int camera = 0, int width = 640, int height = 480)
     {
 
-        VideoCapture cap(0);
+        VideoCapture cap(camera);
+        this->cap = cap;
         if (!cap.isOpened())
             exit(0);
+
+        cap.set(CV_CAP_PROP_FRAME_WIDTH, width);
+        cap.set(CV_CAP_PROP_FRAME_HEIGHT, height);
     }
 
     void openCamera()
@@ -23,7 +27,7 @@ class CameraWrapper
         for (;;)
         {
             cap.read(frame);
-            
+
             // Open Camera
             imshow("My Camera", frame);
             if (waitKey(30) >= 0)
@@ -40,4 +44,4 @@ class CameraWrapper
     void closeCamera()
     {
     }
-}
+};
