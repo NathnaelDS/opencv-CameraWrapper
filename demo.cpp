@@ -1,9 +1,11 @@
 #include "CameraWrapper.cpp"
 
-int main(){
-    CameraWrapper cam(0, 300, 300);
-    cam.openCamera();
-    cam.saveImage();
+CameraWrapper *CameraWrapper::instance = 0;
+int main()
+{
+    CameraWrapper *cw = cw->getInstance(0, 300, 300);
+    cw->openCamera();
+    cw->saveImage();
 
     return -1;
 }

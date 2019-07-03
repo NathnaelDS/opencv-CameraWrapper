@@ -5,10 +5,10 @@ using namespace cv;
 class CameraWrapper
 {
   private:
+    static CameraWrapper *instance;
     Mat frame;
     VideoCapture cap;
 
-  public:
     CameraWrapper(int camera = 0, int width = 640, int height = 480)
     {
 
@@ -19,6 +19,13 @@ class CameraWrapper
 
         cap.set(CV_CAP_PROP_FRAME_WIDTH, width);
         cap.set(CV_CAP_PROP_FRAME_HEIGHT, height);
+    }
+
+  public:
+    static CameraWrapper *getInstance(int camera = 0, int width = 640, int height = 480){
+        if(!instance)
+        instance = new CameraWrapper(camera, width, height);
+        return instance;
     }
 
     void openCamera()
