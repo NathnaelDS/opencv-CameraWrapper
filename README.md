@@ -19,3 +19,5 @@ You can also use openCamera and saveImage to open the camera and save the image,
 cw->openCamera();
 cw->saveImage();
 ```
+
+The image is captured and the camera closes when you press the 'Esc' keyboard button.
