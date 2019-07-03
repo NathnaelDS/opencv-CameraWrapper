@@ -10,7 +10,7 @@ CameraWrapper *CameraWrapper::instance = 0;
 You can then optionally specify the size of your frame while you get the Singleton Instance. If not specified the default is 640x480.
 ```cpp
 CameraWrapper *cw = cw->getInstance(0, 300, 300);
-``
+```
 
 You can also use openCamera and saveImage to open the camera and save the image, respectively.
 ```cpp
