@@ -1,6 +1,8 @@
 # opencv-CameraWrapper
 Camera Wrapper Class for OpenCV written in C++
 
+The included demo shows a basic usage.
+
 Usage:
 This Wrapper Class is singleton and so you have to create the instance
 ```cpp
